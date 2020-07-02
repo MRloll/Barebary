@@ -1,0 +1,73 @@
+/*************
+    body
+*************/
+body {
+    position: relative;
+    overflow-x: hidden;
+    height: 2000px;
+    background: #ccc;
+}
+
+.custom-container {
+    width: 90%;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*************
+    ul
+*************/
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/*************
+    section
+*************/
+footer,
+section {
+    padding-top: 100px;
+}
+
+/*************
+    a (link)
+*************/
+a {
+    outline: none;
+    color: inherit;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+/*************
+    Button
+**************/
+
+* {
+    text-transform: capitalize;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+//********** */
+//Overlay
+// ***********/
+.overlay {
+    display: none;
+    @include overlay(rgba(0, 0, 0, 0.5));
+    z-index: 4;
+}
