@@ -8,7 +8,6 @@
                     <!-- @@@@@@@@@@@@@@@@@@@@ -->
                     <!-- the  bars  -->
                     <!-- @@@@@@@@@@@@@@@@@@@@ -->
-
                     <div class="col">
                         <div class="bars" @click="openMenu">
                             <div>
@@ -22,10 +21,10 @@
                     <div class="col-1 logo text-center">
                         <img :src="require('../assets/images/logo_x36.png')" />
                     </div>
+
                     <!-- @@@@@@@@@@@@@@@@@@@@ -->
                     <!-- the widgets  -->
                     <!-- @@@@@@@@@@@@@@@@@@@@ -->
-
                     <div class="col widgets d-flex">
                         <div class="search">
                             <i class="fas fa-search"></i>
@@ -47,52 +46,331 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- @@@@@@@@@@@@@@@@@@@@ -->
                 <!-- the aside animated links  -->
                 <!-- @@@@@@@@@@@@@@@@@@@@ -->
-                <div class="links">
-                    <div class="times text-left">
-                        <span @click="closeMenu"
-                            ><i class="fas fa-times fa-2x"></i
-                        ></span>
+                <div class="links-wrapper">
+                    <div class="links">
+                        <div class="times text-left">
+                            <span @click="closeMenu"
+                                ><i class="fas fa-times fa-2x"></i
+                            ></span>
+                        </div>
+                        <ul>
+                            <li>
+                                <div class="link">
+                                    <h3>
+                                        <router-link to="goo" class="">
+                                            home
+                                        </router-link>
+                                    </h3>
+                                </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="link"
+                                    data-class=".shop-links"
+                                    @click="openMenuSupLinks($event)"
+                                >
+                                    <h3>
+                                        the shop
+                                    </h3>
+                                    <i class="fas fa-chevron-right "></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div
+                                    class="link"
+                                    data-class=".blog-links"
+                                    @click="openMenuSupLinks($event)"
+                                >
+                                    <h3>
+                                        the blog
+                                    </h3>
+                                    <i class="fas fa-chevron-right "></i>
+                                </div>
+                            </li>
+                        </ul>
+                        <hr />
+                        <div class="contacts">
+                            <p>
+                                <a href="mailto:walidelloll2018@gmail.com"
+                                    >walidelloll2018@gmail.com</a
+                                >
+                            </p>
+                            <p>
+                                <a href="tel:+201013194797">+201013194797</a>
+                            </p>
+                        </div>
                     </div>
-                    <ul>
-                        <li>
-                            <div>
-                                <h3>
-                                    <router-link to="/" class="">
-                                        home
-                                    </router-link>
-                                </h3>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h3>
-                                    the shop
-                                </h3>
-                                <i class="fas fa-chevron-right "></i>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <h3>
-                                    the blog
-                                </h3>
-                                <i class="fas fa-chevron-right "></i>
-                            </div>
-                        </li>
-                    </ul>
-                    <hr />
-                    <div class="contacts">
-                        <p>
-                            <a href="mailto:walidelloll2018@gmail.com"
-                                >walidelloll2018@gmail.com</a
-                            >
-                        </p>
-                        <p>
-                            <a href="tel:+201013194797">+201013194797</a>
-                        </p>
+                    <div class="shop-links suplinks">
+                        <div
+                            class="navigation d-flex justify-content-between align-items-center"
+                        >
+                            <i
+                                class="fas fa-arrow-left"
+                                @click="closeMenuSupLinks($event)"
+                                data-class=".shop-links"
+                            ></i>
+                            <router-link to="/"><h4>shop</h4></router-link>
+                            <i
+                                @click="closeMenu"
+                                class="fas fa-times fa-2x"
+                            ></i>
+                        </div>
+                        <div class="ul-wrapper">
+                            <ul>
+                                <li>
+                                    <div
+                                        class="wrapper"
+                                        data-class=".cat-one"
+                                        @click="openCategoryLinks($event)"
+                                    >
+                                        <span>
+                                            category one
+                                        </span>
+                                        <i class="fas fa-chevron-right "></i>
+                                    </div>
+                                    <div class="cat cat-one">
+                                        <div
+                                            class="navigation d-flex justify-content-between align-items-center"
+                                        >
+                                            <i
+                                                class="fas fa-arrow-left"
+                                                @click="
+                                                    closeCategoryLinks($event)
+                                                "
+                                                data-class=".cat-one"
+                                            ></i>
+                                            <router-link to="/"
+                                                ><h4>Cat one</h4></router-link
+                                            >
+                                            <i
+                                                @click="closeMenu"
+                                                class="fas fa-times fa-2x"
+                                            ></i>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="wrapper"
+                                        data-class=".cat-two"
+                                        @click="openCategoryLinks($event)"
+                                    >
+                                        <span>
+                                            category two
+                                        </span>
+                                        <i class="fas fa-chevron-right "></i>
+                                    </div>
+                                    <div class="cat cat-two">
+                                        <div
+                                            class="navigation d-flex justify-content-between align-items-center"
+                                        >
+                                            <i
+                                                class="fas fa-arrow-left"
+                                                @click="
+                                                    closeCategoryLinks($event)
+                                                "
+                                                data-class=".cat-two"
+                                            ></i>
+                                            <router-link to="/"
+                                                ><h4>Cat two</h4></router-link
+                                            >
+                                            <i
+                                                @click="closeMenu"
+                                                class="fas fa-times fa-2x"
+                                            ></i>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="wrapper"
+                                        data-class=".cat-three"
+                                        @click="openCategoryLinks($event)"
+                                    >
+                                        <span>
+                                            category three
+                                        </span>
+                                        <i class="fas fa-chevron-right "></i>
+                                    </div>
+                                    <div class="cat cat-three">
+                                        <div
+                                            class="navigation d-flex justify-content-between align-items-center"
+                                        >
+                                            <i
+                                                class="fas fa-arrow-left"
+                                                @click="
+                                                    closeCategoryLinks($event)
+                                                "
+                                                data-class=".cat-three"
+                                            ></i>
+                                            <router-link to="/"
+                                                ><h4>Cat three</h4></router-link
+                                            >
+                                            <i
+                                                @click="closeMenu"
+                                                class="fas fa-times fa-2x"
+                                            ></i>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div
+                                        class="wrapper"
+                                        data-class=".cat-four"
+                                        @click="openCategoryLinks($event)"
+                                    >
+                                        <span>
+                                            category four
+                                        </span>
+                                        <i class="fas fa-chevron-right "></i>
+                                    </div>
+                                    <div class="cat cat-four">
+                                        <div
+                                            class="navigation d-flex justify-content-between align-items-center"
+                                        >
+                                            <i
+                                                class="fas fa-arrow-left"
+                                                @click="
+                                                    closeCategoryLinks($event)
+                                                "
+                                                data-class=".cat-four"
+                                            ></i>
+                                            <router-link to="/"
+                                                ><h4>Cat four</h4></router-link
+                                            >
+                                            <i
+                                                @click="closeMenu"
+                                                class="fas fa-times fa-2x"
+                                            ></i>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                            <li>
+                                                <router-link to="/"
+                                                    >link</router-link
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="blog-links suplinks">
+                        <div
+                            class="navigation d-flex justify-content-between align-items-center"
+                        >
+                            <i
+                                class="fas fa-arrow-left"
+                                @click="closeMenuSupLinks($event)"
+                                data-class=".blog-links"
+                            ></i>
+                            <router-link to="/"><h4>shop</h4></router-link>
+                            <i
+                                @click="closeMenu"
+                                class="fas fa-times fa-2x"
+                            ></i>
+                        </div>
+                        <div class="ul-wrapper">
+                            <ul>
+                                <li>
+                                    <div class="wrapper">
+                                        <span>
+                                            Blog one
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wrapper">
+                                        <span>
+                                            Blog two
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wrapper">
+                                        <span>
+                                            Blog three
+                                        </span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="wrapper">
+                                        <span>
+                                            Blog four
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div
@@ -108,6 +386,7 @@
 <script>
 import animate from "../../animation.js";
 export default {
+    name: "NavMobile",
     methods: {
         openMenu() {
             animate.openMenu();
@@ -117,6 +396,23 @@ export default {
         },
         openCart() {
             animate.openCart();
+        },
+        openMenuSupLinks(e) {
+            let elem = e.currentTarget.getAttribute("data-class");
+            animate.openMenuSupLinks(elem);
+        },
+        closeMenuSupLinks(e) {
+            let elem = e.currentTarget.getAttribute("data-class");
+            animate.closeMenuSupLinks(elem);
+            console.log(elem);
+        },
+        openCategoryLinks(e) {
+            let elem = e.currentTarget.getAttribute("data-class");
+            animate.openCategoryLinks(elem);
+        },
+        closeCategoryLinks(e) {
+            let elem = e.currentTarget.getAttribute("data-class");
+            animate.closeCategoryLinks(elem);
         }
     }
 };
@@ -144,12 +440,11 @@ export default {
     //  the aside animated links
     //  @@@@@@@@@@@@@@@@@@@@
 
-    .links {
+    .links-wrapper {
         position: absolute;
         top: 0;
         left: 0;
         z-index: 5;
-        padding: 70px 30px;
         background: white;
         max-height: 100vh;
         height: 100vh;
@@ -158,42 +453,92 @@ export default {
         overflow-y: auto;
         overflow-x: hidden;
         transform: translateX(-100%);
-        .times {
-            margin-bottom: 10px;
-            i {
-                cursor: pointer;
-                font-size: 25px;
+        .links {
+            padding: 70px 30px;
+            .times {
+                margin-bottom: 10px;
+                i {
+                    font-size: 25px;
+                    cursor: pointer;
+                }
             }
-        }
-        ul {
-            li {
-                margin: 0;
-                height: 60px;
-                cursor: pointer;
-                display: block;
-                overflow: hidden;
-                & > div {
-                    transform: translateY(120px);
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    @extend %vertical-center;
+            ul {
+                li {
+                    margin: 0;
+                    height: 60px;
+                    display: block;
+                    overflow: hidden;
+                    & > .link {
+                        transform: translateY(120px);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        @extend %vertical-center;
+                        cursor: pointer;
+                        h3 {
+                            width: 100%;
+                            a {
+                                width: 100%;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+            hr {
+                height: 7px;
+                background: #333;
+                border-radius: 5px;
+                margin: 20px 0;
+                width: 45%;
+                opacity: 0;
+            }
+            .contacts {
+                // min-width: fit-content;
+                a {
+                    font-weight: 300;
+                    color: #5f5f5f;
                 }
             }
         }
-        hr {
-            height: 7px;
-            background: #333;
-            border-radius: 5px;
-            margin: 20px 0;
-            width: 45%;
-            opacity: 0;
-        }
-        .contacts {
-            // min-width: fit-content;
-            a {
-                font-weight: 300;
-                color: #5f5f5f;
+        .suplinks {
+            padding: 30px 40px;
+            position: absolute;
+            top: 0;
+            right: 0%;
+            width: 100%;
+            height: 100%;
+            background: white;
+            transform: translateX(100%);
+            .navigation {
+                i {
+                    cursor: pointer;
+                }
+            }
+            ul {
+                padding-top: 50px;
+                li {
+                    margin-bottom: 15px;
+                    color: #666;
+                    font-size: 17px;
+                    letter-spacing: 0px;
+                    .wrapper {
+                        display: flex;
+                        justify-content: space-between;
+                        align-content: center;
+                        cursor: pointer;
+                    }
+                    .cat {
+                        padding: 30px 40px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: white;
+                        transform: translateX(100%);
+                    }
+                }
             }
         }
     }
