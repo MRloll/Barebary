@@ -1,0 +1,136 @@
+{
+    "categories": [
+        {
+            "name": "living room",
+            "sorts": [
+                {
+                    "name": "accessories",
+                    "products": [
+                        {
+                            "name": "portable bluetooth speaker",
+                            "price": 249,
+                            "img_1": "portable_spkr_01.jpg",
+                            "img_2": "portable_spkr_02.jpg"
+                        },
+                        {
+                            "name": "elephant chair",
+                            "price": 196,
+                            "img_1": "elephant_stool_01.jpg",
+                            "img_2": "elephant_stool_02.jpg"
+                        },
+                        {
+                            "name": "libero headphones",
+                            "price": 499,
+                            "img_1": "beoplayh01.jpg",
+                            "img_2": "beoplayh02.jpg"
+                        },
+                        {
+                            "name": "decorative alarm clock",
+                            "price": 65,
+                            "img_1": "tumbler_clock_01.jpg",
+                            "img_2": "tumbler_clock_02.jpg"
+                        }
+                    ]
+                },
+                {
+                    "name": "armchairs",
+                    "products": [
+                        {
+                            "name": "molded plastic armchair",
+                            "price": 560,
+                            "img_1": "eames_armchair_01.jpg",
+                            "img_2": "eames_armchair_02.jpg"
+                        },
+                        {
+                            "name": "lounge chair",
+                            "price": 499,
+                            "img_1": "otio_chair_01.jpg",
+                            "img_2": "otio_chair_02.jpg"
+                        },
+                        {
+                            "name": "fousce porta arm chair",
+                            "price": 1333,
+                            "img_1": "lilo_chair_01.jpg",
+                            "img_2": "lilo_chair_02.jpg"
+                        },
+                        {
+                            "name": "mauris dining chair",
+                            "price": 299,
+                            "img_1": "love_dining_chair_01.jpg",
+                            "img_2": "love_dining_chair_02.jpg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "bathroom",
+            "products": [
+                {
+                    "name": "ullam basin mixer",
+                    "price": 160,
+                    "img_1": "rim_mixer_01.jpg",
+                    "img_2": "rim_mixer_02.jpg"
+                },
+                {
+                    "name": "gravida bathtub",
+                    "price": 2100,
+                    "img_1": "inbani_bathtub_01.jpg",
+                    "img_2": "inbani_bathtub_02.jpg"
+                },
+                {
+                    "name": "vulputate mixer",
+                    "price": 300,
+                    "img_1": "marmo_mixer_01.jpg",
+                    "img_2": "marmo_mixer_02.jpg"
+                },
+                {
+                    "name": "aliquam veneatis bathtub",
+                    "price": 2580,
+                    "img_1": "sa_oche_01.jpg",
+                    "img_2": "sa_oche_02.jpg"
+                }
+            ]
+        },
+        {
+            "name": "kitchen",
+            "products": [
+                {
+                    "name": "quisque teapot",
+                    "price": 240,
+                    "img_1": "theo_teapot_01.jpg",
+                    "img_2": "theo_teapot_02.jpg"
+                },
+                {
+                    "name": "creamic teapot",
+                    "price": 60,
+                    "img_1": "cer_teapot_01.jpg",
+                    "img_2": "cer_teapot_02.jpg"
+                },
+                {
+                    "name": "bottle grinders",
+                    "price": 30,
+                    "img_1": "bottle_gringer_01.jpg",
+                    "img_2": "bottle_gringer_02.jpg"
+                }
+            ]
+        },
+        {
+            "name": "lighting",
+            "products": [
+                {
+                    "name": "commodo blown lamp",
+                    "price": 275,
+                    "img_1": "tradition_blown_01.jpg",
+                    "img_2": "tradition_blown_02.jpg"
+                },
+                {
+                    "name": "spot table",
+                    "price": 100,
+                    "img_1": "spot_lamp_01.jpg",
+                    "img_2": "spot_lamp_02.jpg"
+                }
+            ]
+        }
+    ]
+}

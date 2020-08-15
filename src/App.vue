@@ -1,18 +1,18 @@
 <template>
     <div id="app">
         <base-nav-bar />
-        <slider></slider>
-        <router-view />
+        <router-view> </router-view>
     </div>
 </template>
+
 <script>
-import Slider from "@/components/Slider.vue";
 export default {
-    components: {
-        Slider
+    created() {
+        this.$store.dispatch("getCategories");
     }
 };
 </script>
+
 <style lang="scss">
 @media #{$maxMedium} {
     body {
