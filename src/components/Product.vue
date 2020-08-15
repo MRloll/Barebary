@@ -13,9 +13,21 @@
             />
         </div>
         <div class="d-none d-md-block">
-            <div class="desc d-flex justify-content-between align-items-end">
-                <h3 v-html="splitProductName(product.name)"></h3>
-                <span>{{ product.price }}$</span>
+            <div class="desc">
+                <star-rating
+                    :read-only="true"
+                    :rating="product.rating"
+                    :star-size="15"
+                    :increment="0.1"
+                    :fixed-points="2"
+                    :show-rating="false"
+                    v-if="product.rating"
+                    style="margin-bottom: 10px"
+                ></star-rating>
+                <div class=" d-flex justify-content-between align-items-end">
+                    <h3 v-html="splitProductName(product.name)"></h3>
+                    <span>{{ product.price }}$</span>
+                </div>
             </div>
             <div
                 class="buttons d-flex justify-content-center align-items-center"
@@ -29,28 +41,44 @@
                 <button><i class="far fa-eye"></i></button>
                 <button><i class="fas fa-cart-plus"></i></button>
             </div>
-            <div
-                class="desc-small d-sm-flex justify-content-between align-items-end"
-            >
-                <h3
-                    class="d-none d-sm-block"
-                    v-html="splitProductName(product.name)"
-                ></h3>
-                <h3 class="d-block d-sm-none" v-html="product.name"></h3>
-                <span>{{ product.price }}$</span>
+            <div class="desc-small">
+                <star-rating
+                    :read-only="true"
+                    :rating="product.rating"
+                    :star-size="15"
+                    :increment="0.1"
+                    :fixed-points="2"
+                    :show-rating="false"
+                    v-if="product.rating"
+                    style="margin-bottom: 10px"
+                ></star-rating>
+
+                <div class=" d-sm-flex justify-content-between align-items-end">
+                    <h3
+                        class="d-none d-sm-block"
+                        v-html="splitProductName(product.name)"
+                    ></h3>
+                    <h3 class="d-block d-sm-none" v-html="product.name"></h3>
+                    <span>{{ product.price }}$</span>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import StarRating from "vue-star-rating";
+
 export default {
     methods: {
         splitProductName(name) {
             return name.replace(" ", "<br />");
         }
     },
-    props: ["product"]
+    props: ["product"],
+    components: {
+        StarRating
+    }
 };
 </script>
 
@@ -88,6 +116,7 @@ export default {
         h3 {
             position: relative;
             z-index: 3;
+            font-weight: bold;
             h3:first-child {
                 color: red;
             }
@@ -192,6 +221,7 @@ export default {
     @media #{$maxMobile} {
         h3 {
             font-size: 18px;
+            font-weight: 400 !important;
         }
     }
 }

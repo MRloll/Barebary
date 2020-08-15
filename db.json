@@ -10,7 +10,8 @@
                             "name": "portable bluetooth speaker",
                             "price": 249,
                             "img_1": "portable_spkr_01.jpg",
-                            "img_2": "portable_spkr_02.jpg"
+                            "img_2": "portable_spkr_02.jpg",
+                            "rating": 3.4
                         },
                         {
                             "name": "elephant chair",
@@ -28,7 +29,8 @@
                             "name": "decorative alarm clock",
                             "price": 65,
                             "img_1": "tumbler_clock_01.jpg",
-                            "img_2": "tumbler_clock_02.jpg"
+                            "img_2": "tumbler_clock_02.jpg",
+                            "rating": 4
                         }
                     ]
                 },
@@ -45,7 +47,8 @@
                             "name": "lounge chair",
                             "price": 499,
                             "img_1": "otio_chair_01.jpg",
-                            "img_2": "otio_chair_02.jpg"
+                            "img_2": "otio_chair_02.jpg",
+                            "rating": 3.5
                         },
                         {
                             "name": "fousce porta arm chair",
@@ -70,13 +73,15 @@
                     "name": "ullam basin mixer",
                     "price": 160,
                     "img_1": "rim_mixer_01.jpg",
-                    "img_2": "rim_mixer_02.jpg"
+                    "img_2": "rim_mixer_02.jpg",
+                    "rating": 4.5
                 },
                 {
                     "name": "gravida bathtub",
                     "price": 2100,
                     "img_1": "inbani_bathtub_01.jpg",
-                    "img_2": "inbani_bathtub_02.jpg"
+                    "img_2": "inbani_bathtub_02.jpg",
+                    "rating": 4
                 },
                 {
                     "name": "vulputate mixer",
@@ -105,13 +110,15 @@
                     "name": "creamic teapot",
                     "price": 60,
                     "img_1": "cer_teapot_01.jpg",
-                    "img_2": "cer_teapot_02.jpg"
+                    "img_2": "cer_teapot_02.jpg",
+                    "rating": 3.9
                 },
                 {
                     "name": "bottle grinders",
                     "price": 30,
                     "img_1": "bottle_gringer_01.jpg",
-                    "img_2": "bottle_gringer_02.jpg"
+                    "img_2": "bottle_gringer_02.jpg",
+                    "rating": 4.8
                 }
             ]
         },
@@ -128,7 +135,8 @@
                     "name": "spot table",
                     "price": 100,
                     "img_1": "spot_lamp_01.jpg",
-                    "img_2": "spot_lamp_02.jpg"
+                    "img_2": "spot_lamp_02.jpg",
+                    "rating": 3.4
                 }
             ]
         }
