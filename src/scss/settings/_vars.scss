@@ -15,6 +15,50 @@ $minLarge: "(min-width: 1200px)";
     background: $color;
 }
 
+//BASE BUTTON
+@mixin baseButton(
+    $parentBg: white,
+    $spanColor: black,
+    $spanHoverColor: white,
+    $spanTransition: color 1s ease,
+    $afterBg: black,
+    $afterTransition: transform 1s ease
+) {
+    display: inline-block;
+    overflow: hidden;
+    outline: none;
+    background: $parentBg;
+    span {
+        position: relative;
+        z-index: 1;
+        color: $spanColor;
+        transition: $spanTransition;
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 150%;
+        height: 100%;
+        background: $afterBg;
+        z-index: 0;
+        transform-origin: 0% 100%;
+        transform: rotate3d(0, 0, 1, 10deg) translate3d(-1.2em, 110%, 0);
+        transition: $afterTransition;
+    }
+    &:hover {
+        span {
+            color: $spanHoverColor;
+        }
+        &::after {
+            transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);
+        }
+    }
+}
+
 //ANIMATION MIXIN
 @mixin keyFrame($animation-name) {
     @keyframes #{$animation-name} {
