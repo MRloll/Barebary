@@ -4,7 +4,7 @@
         <showcase />
         <recent-products />
         <info />
-        <Footer />
+        <product-preview />
     </div>
 </template>
 
@@ -13,14 +13,14 @@ import Slider from "@/components/Slider.vue";
 import Showcase from "@/components/Showcase.vue";
 import RecentProducts from "@/components/RecentProducts.vue";
 import Info from "@/components/Info.vue";
-import Footer from "@/components/Footer.vue";
+import ProductPreview from "@/components/ProductPreview.vue";
 export default {
     components: {
         Slider,
         Showcase,
         RecentProducts,
         Info,
-        Footer
+        ProductPreview
     }
 };
 </script>

@@ -5,7 +5,7 @@ import store from "./store";
 import "@/assets/css/bootstrap.min.css";
 import "@/scss/main.scss";
 import "@/assets/css/all.min.css";
-
+export const EventBus = new Vue();
 Vue.config.productionTip = false;
 
 import upperFirst from "lodash/upperFirst";

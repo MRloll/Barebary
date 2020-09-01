@@ -51,7 +51,7 @@
                 <!-- the aside animated links  -->
                 <!-- @@@@@@@@@@@@@@@@@@@@ -->
                 <div class="links-wrapper">
-                    <div class="links">
+                    <div class="links-holder">
                         <div class="times text-left">
                             <span @click="closeMenu"
                                 ><i class="fas fa-times fa-2x"></i
@@ -121,18 +121,21 @@
                         </div>
                         <div class="ul-wrapper">
                             <ul>
-                                <li>
+                                <li
+                                    v-for="category in categories"
+                                    :key="category.id"
+                                >
                                     <div
                                         class="wrapper"
-                                        data-class=".cat-one"
+                                        :data-class="'.' + category.id"
                                         @click="openCategoryLinks($event)"
                                     >
                                         <span>
-                                            category one
+                                            {{ category.name }}
                                         </span>
                                         <i class="fas fa-chevron-right "></i>
                                     </div>
-                                    <div class="cat cat-one">
+                                    <div :class="['cat', category.id]">
                                         <div
                                             class="navigation d-flex justify-content-between align-items-center"
                                         >
@@ -141,10 +144,12 @@
                                                 @click="
                                                     closeCategoryLinks($event)
                                                 "
-                                                data-class=".cat-one"
+                                                :data-class="'.' + category.id"
                                             ></i>
                                             <router-link to="/"
-                                                ><h4>Cat one</h4></router-link
+                                                ><h4>
+                                                    {{ category.name }}
+                                                </h4></router-link
                                             >
                                             <i
                                                 @click="closeMenu"
@@ -153,170 +158,27 @@
                                         </div>
 
                                         <ul>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
+                                            <template v-if="category.sorts">
+                                                <template
+                                                    v-for="sort in category.sorts"
                                                 >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="wrapper"
-                                        data-class=".cat-two"
-                                        @click="openCategoryLinks($event)"
-                                    >
-                                        <span>
-                                            category two
-                                        </span>
-                                        <i class="fas fa-chevron-right "></i>
-                                    </div>
-                                    <div class="cat cat-two">
-                                        <div
-                                            class="navigation d-flex justify-content-between align-items-center"
-                                        >
-                                            <i
-                                                class="fas fa-arrow-left"
-                                                @click="
-                                                    closeCategoryLinks($event)
-                                                "
-                                                data-class=".cat-two"
-                                            ></i>
-                                            <router-link to="/"
-                                                ><h4>Cat two</h4></router-link
+                                                    <li
+                                                        v-for="product in sort.products"
+                                                        :key="product.id"
+                                                    >
+                                                        <router-link to="/">{{
+                                                            product.name
+                                                        }}</router-link>
+                                                    </li>
+                                                </template>
+                                            </template>
+                                            <li
+                                                v-for="product in category.products"
+                                                :key="product.id"
                                             >
-                                            <i
-                                                @click="closeMenu"
-                                                class="fas fa-times fa-2x"
-                                            ></i>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="wrapper"
-                                        data-class=".cat-three"
-                                        @click="openCategoryLinks($event)"
-                                    >
-                                        <span>
-                                            category three
-                                        </span>
-                                        <i class="fas fa-chevron-right "></i>
-                                    </div>
-                                    <div class="cat cat-three">
-                                        <div
-                                            class="navigation d-flex justify-content-between align-items-center"
-                                        >
-                                            <i
-                                                class="fas fa-arrow-left"
-                                                @click="
-                                                    closeCategoryLinks($event)
-                                                "
-                                                data-class=".cat-three"
-                                            ></i>
-                                            <router-link to="/"
-                                                ><h4>Cat three</h4></router-link
-                                            >
-                                            <i
-                                                @click="closeMenu"
-                                                class="fas fa-times fa-2x"
-                                            ></i>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div
-                                        class="wrapper"
-                                        data-class=".cat-four"
-                                        @click="openCategoryLinks($event)"
-                                    >
-                                        <span>
-                                            category four
-                                        </span>
-                                        <i class="fas fa-chevron-right "></i>
-                                    </div>
-                                    <div class="cat cat-four">
-                                        <div
-                                            class="navigation d-flex justify-content-between align-items-center"
-                                        >
-                                            <i
-                                                class="fas fa-arrow-left"
-                                                @click="
-                                                    closeCategoryLinks($event)
-                                                "
-                                                data-class=".cat-four"
-                                            ></i>
-                                            <router-link to="/"
-                                                ><h4>Cat four</h4></router-link
-                                            >
-                                            <i
-                                                @click="closeMenu"
-                                                class="fas fa-times fa-2x"
-                                            ></i>
-                                        </div>
-
-                                        <ul>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
-                                            </li>
-                                            <li>
-                                                <router-link to="/"
-                                                    >link</router-link
-                                                >
+                                                <router-link to="/">{{
+                                                    product.name
+                                                }}</router-link>
                                             </li>
                                         </ul>
                                     </div>
@@ -385,6 +247,7 @@
 
 <script>
 import animate from "../../animation.js";
+import { mapState } from "vuex";
 export default {
     name: "NavMobile",
     methods: {
@@ -404,7 +267,6 @@ export default {
         closeMenuSupLinks(e) {
             let elem = e.currentTarget.getAttribute("data-class");
             animate.closeMenuSupLinks(elem);
-            console.log(elem);
         },
         openCategoryLinks(e) {
             let elem = e.currentTarget.getAttribute("data-class");
@@ -414,6 +276,9 @@ export default {
             let elem = e.currentTarget.getAttribute("data-class");
             animate.closeCategoryLinks(elem);
         }
+    },
+    computed: {
+        ...mapState(["categories"])
     }
 };
 </script>
@@ -453,7 +318,7 @@ export default {
         overflow-y: auto;
         overflow-x: hidden;
         transform: translateX(-100%);
-        .links {
+        .links-holder {
             padding: 70px 30px;
             .times {
                 margin-bottom: 10px;

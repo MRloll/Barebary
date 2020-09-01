@@ -2,77 +2,35 @@
     <div class="showcase">
         <div class="custom-container">
             <div class="row">
-                <div class="col-lg-3 col-6">
+                <div
+                    v-for="category in categories"
+                    :key="category.id"
+                    class="col-lg-3 col-6"
+                >
                     <router-link to="/">
-                        <div class="cat living-room">
+                        <div class="cat">
                             <div class="img">
                                 <img
-                                    src="..\assets\images\cat_living_room.jpg"
-                                    alt="living-room"
+                                    :src="
+                                        require(`@/assets/images/${category.cover}`)
+                                    "
+                                    :alt="category.name"
                                     class="img-fluid"
                                 />
                             </div>
                             <div class="desc">
-                                <span>4 products</span>
+                                <span
+                                    >{{
+                                        category.sorts
+                                            ? category.sorts[0].products
+                                                  .length +
+                                              category.sorts[1].products.length
+                                            : category.products.length
+                                    }}
+                                    products</span
+                                >
                                 <div class="desc-name">
-                                    <h2>Living Room</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <router-link to="/">
-                        <div class="cat bathroom">
-                            <div class="img">
-                                <img
-                                    src="..\assets\images\cat_bathroom.jpg"
-                                    alt="living-room"
-                                    class="img-fluid"
-                                />
-                            </div>
-                            <div class="desc">
-                                <span>4 products</span>
-                                <div class="desc-name">
-                                    <h2>Bathroom</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <router-link to="/">
-                        <div class="cat accessories">
-                            <div class="img">
-                                <img
-                                    src="..\assets\images\cat_accessories.jpg"
-                                    alt="living-room"
-                                    class="img-fluid"
-                                />
-                            </div>
-                            <div class="desc">
-                                <span>4 products</span>
-                                <div class="desc-name">
-                                    <h2>accessories</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </router-link>
-                </div>
-                <div class="col-lg-3 col-6">
-                    <router-link to="/">
-                        <div class="cat kitchen">
-                            <div class="img">
-                                <img
-                                    src="..\assets\images\cat_kitchen.jpg"
-                                    alt="living-room"
-                                    class="img-fluid"
-                                />
-                            </div>
-                            <div class="desc">
-                                <span>4 products</span>
-                                <div class="desc-name">
-                                    <h2>kitchen</h2>
+                                    <h2>{{ category.name }}</h2>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +42,12 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from "vuex";
+export default {
+    computed: {
+        ...mapState(["categories"])
+    }
+};
 </script>
 
 <style lang="scss" scoped>

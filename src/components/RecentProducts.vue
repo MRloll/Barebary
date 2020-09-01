@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.recent-products {
+    background-color: white;
+}
 h2 {
     font-weight: bold;
 }

@@ -33,118 +33,54 @@
                                 <div class="slide-down-box ">
                                     <div class="slide-down-inner shop-products">
                                         <div class="row">
-                                            <div class="col">
+                                            <div
+                                                v-for="category in categories"
+                                                :key="category.id"
+                                                class="col"
+                                            >
                                                 <div>
                                                     <ul>
                                                         <li>
-                                                            <h4>Ctegory 1</h4>
+                                                            <router-link to="/">
+                                                                <h4>
+                                                                    {{
+                                                                        category.name
+                                                                    }}
+                                                                </h4>
+                                                            </router-link>
                                                         </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
+                                                        <template
+                                                            v-if="
+                                                                category.sorts
+                                                            "
+                                                        >
+                                                            <template
+                                                                v-for="sort in category.sorts"
                                                             >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div>
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Ctegory 1</h4>
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col">
-                                                <div>
-                                                    <ul>
-                                                        <li>
-                                                            <h4>Ctegory 1</h4>
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
-                                                            >
-                                                        </li>
-                                                        <li>
-                                                            <router-link to="/"
-                                                                >product</router-link
+                                                                <li
+                                                                    v-for="product in sort.products"
+                                                                    :key="
+                                                                        product.id
+                                                                    "
+                                                                >
+                                                                    <router-link
+                                                                        to="/"
+                                                                        >{{
+                                                                            product.name
+                                                                        }}</router-link
+                                                                    >
+                                                                </li>
+                                                            </template>
+                                                        </template>
+                                                        <li
+                                                            v-for="product in category.products"
+                                                            :key="product.id"
+                                                        >
+                                                            <router-link
+                                                                to="/"
+                                                                >{{
+                                                                    product.name
+                                                                }}</router-link
                                                             >
                                                         </li>
                                                     </ul>
@@ -224,6 +160,7 @@
 import animate from "../../animation.js";
 import NavMobile from "@/components/NavMobile.vue";
 import StickyNav from "@/components/StickyNav.vue";
+import { mapState } from "vuex";
 export default {
     name: "BaseNavBar",
     methods: {
@@ -243,7 +180,7 @@ export default {
             }
         }
     },
-    mounted() {
+    updated() {
         document.addEventListener("scroll", this.showFixedNav);
 
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -262,6 +199,9 @@ export default {
     },
     beforeDestroy() {
         document.addEventListener("scroll", this.showFixedNav);
+    },
+    computed: {
+        ...mapState(["categories"])
     },
     components: {
         NavMobile,
@@ -326,7 +266,7 @@ nav {
                                 margin: 0;
                                 opacity: 0;
                                 a {
-                                    padding: 0.4em 0;
+                                    margin: 0.4em 0;
                                     line-height: 1.3;
                                     display: inline-block;
                                     color: #666;
@@ -334,12 +274,16 @@ nav {
                                     font-weight: 300;
                                     letter-spacing: 0px;
                                     text-transform: capitalize;
+                                    transition: color 0.4s ease-out;
+                                    &:hover {
+                                        color: #9c9c9c;
+                                    }
                                 }
                             }
                         }
                     }
                     .shop-products {
-                        min-width: 700px;
+                        min-width: 900px;
                         padding: 70px 50px;
                         background: url("../assets/images/menu-bg.jpg");
                         background-repeat: no-repeat;

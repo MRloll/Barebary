@@ -61,6 +61,7 @@ export default {};
 
 <style lang="scss" scoped>
 .info {
+    background-color: white;
     .text-banner {
         h3 {
             font-weight: bold;
@@ -75,8 +76,6 @@ export default {};
             @include baseButton(
                 black,
                 white,
-                black,
-                $afterBg: white,
                 $afterTransition: transform 0.5s
                     cubic-bezier(0.59, 0.03, 0.2, 1)
             );

@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="copy-rights-section my-5">
+        <div class="copy-rights-section py-5">
             <div class="custom-container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-lg-3 col-sm-6 text-center text-sm-left">
@@ -84,8 +84,18 @@
     </div>
 </template>
 
+<script>
+export default {
+    name: "Footering"
+};
+</script>
+
 <style lang="scss">
 .footer {
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
     ul.links {
         li {
             font-size: 19px;
@@ -142,6 +152,9 @@
                 font-size: 25px;
             }
         }
+    }
+    @media #{$maxMedium} {
+        position: relative;
     }
     .copy-rights-section {
         ul.social {

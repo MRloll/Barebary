@@ -37,7 +37,7 @@ export default new Vuex.Store({
                 }
 
                 if (!state.categories[i].sorts) {
-                    let recentTwo = state.categories[i].products.splice(0, 2);
+                    let recentTwo = state.categories[i].products.slice(0, 2);
                     for (let z = 0; z < recentTwo.length; z++) {
                         recentProducts.push(recentTwo[z]);
                     }

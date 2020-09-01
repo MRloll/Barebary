@@ -10,13 +10,13 @@ const animate = {
             x: 0
         });
 
-        gsap.to(".nav-mobile .links li .link", {
+        gsap.to(".nav-mobile .links-holder li .link", {
             y: 0,
             stagger: 0.1,
             duration: 1
         });
 
-        this.tl.to(".nav-mobile .links hr", {
+        this.tl.to(".nav-mobile .links-holder hr", {
             opacity: 1,
             width: "100%"
         });
@@ -32,11 +32,11 @@ const animate = {
             x: "-100%"
         });
 
-        this.tl.to(".nav-mobile .links li .link", {
+        this.tl.to(".nav-mobile .links-holder li .link", {
             y: 120
         });
 
-        this.tl.to(".nav-mobile .links hr", {
+        this.tl.to(".nav-mobile .links-holder hr", {
             opacity: 0,
             width: "40%"
         });
@@ -81,7 +81,7 @@ const animate = {
             x: 0,
             duration: 0.3
         });
-        gsap.to(".links", {
+        gsap.to(".links-holder", {
             x: -100,
             duration: 0.3
         });
@@ -91,7 +91,7 @@ const animate = {
             x: "100%",
             duration: 0.3
         });
-        gsap.to(".links", {
+        gsap.to(".links-holder", {
             x: 0,
             duration: 0.3
         });

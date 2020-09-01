@@ -17,21 +17,19 @@ $minLarge: "(min-width: 1200px)";
 
 //BASE BUTTON
 @mixin baseButton(
-    $parentBg: white,
-    $spanColor: black,
-    $spanHoverColor: white,
+    $firstColor: white,
+    $secondColor: black,
     $spanTransition: color 1s ease,
-    $afterBg: black,
-    $afterTransition: transform 1s ease
+    $afterTransition: transform 0.5s cubic-bezier(0.59, 0.03, 0.2, 1)
 ) {
     display: inline-block;
     overflow: hidden;
     outline: none;
-    background: $parentBg;
+    background: $firstColor;
     span {
         position: relative;
         z-index: 1;
-        color: $spanColor;
+        color: $secondColor;
         transition: $spanTransition;
     }
     &::after {
@@ -43,7 +41,7 @@ $minLarge: "(min-width: 1200px)";
         right: 0;
         width: 150%;
         height: 100%;
-        background: $afterBg;
+        background: $secondColor;
         z-index: 0;
         transform-origin: 0% 100%;
         transform: rotate3d(0, 0, 1, 10deg) translate3d(-1.2em, 110%, 0);
@@ -51,7 +49,7 @@ $minLarge: "(min-width: 1200px)";
     }
     &:hover {
         span {
-            color: $spanHoverColor;
+            color: $firstColor;
         }
         &::after {
             transform: rotate3d(0, 0, 1, 0deg) translate3d(0, 0, 0);

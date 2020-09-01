@@ -32,13 +32,17 @@
             <div
                 class="buttons d-flex justify-content-center align-items-center"
             >
-                <button><i class="far fa-eye"></i></button>
+                <button @click="openPreview(product)">
+                    <i class="far fa-eye"></i>
+                </button>
                 <button class="base-button"><span>Add To cart</span></button>
             </div>
         </div>
         <div class="d-lg-none d-block">
             <div class="buttons buttons-small">
-                <button><i class="far fa-eye"></i></button>
+                <button @click="openPreview(product)">
+                    <i class="far fa-eye"></i>
+                </button>
                 <button class="base-button">
                     <span><i class="fas fa-cart-plus"></i></span>
                 </button>
@@ -70,11 +74,14 @@
 
 <script>
 import StarRating from "vue-star-rating";
-
+import { EventBus } from "../main";
 export default {
     methods: {
         splitProductName(name) {
             return name.replace(" ", "<br />");
+        },
+        openPreview(product) {
+            EventBus.$emit("openPreview", product);
         }
     },
     props: ["product"],
@@ -175,7 +182,6 @@ export default {
             z-index: 3;
             &.base-button {
                 @include baseButton(
-                    $spanColor: black,
                     $afterTransition: transform 0.5s
                         cubic-bezier(0.59, 0.03, 0.2, 1)
                 );
