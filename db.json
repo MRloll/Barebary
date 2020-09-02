@@ -3,12 +3,14 @@
         {
             "name": "living room",
             "cover": "cat_living_room.jpg",
+            "icon": "living_room_icon.svg",
             "id": "living",
             "sorts": [
                 {
                     "name": "accessories",
                     "products": [
                         {
+                            "id": 1,
                             "name": "portable bluetooth speaker",
                             "price": 249,
                             "img_1": "portable_spkr_01.jpg",
@@ -17,6 +19,7 @@
                             "description": "Portable Bluetooth speaker with up to 24hrs of battery life. Bring it everywhere. Even the heaviest beats are easy to carry."
                         },
                         {
+                            "id": 2,
                             "name": "elephant chair",
                             "price": 196,
                             "img_1": "elephant_stool_01.jpg",
@@ -24,6 +27,7 @@
                             "description": "The Eames’ originally envisioned their now iconic Elephant in plywood, back at its conception in 1945. However, due to technological restraints at the time it was never produced. The elephant was also originally environed as a child’s toy, and while still true today we can’t help but covet for ourselves. A playful design hero, in it’s true form. This is a Demo Online Store. No orders shall be fulfilled. Purchase this product on"
                         },
                         {
+                            "id": 3,
                             "name": "libero headphones",
                             "price": 499,
                             "img_1": "beoplayh01.jpg",
@@ -31,6 +35,7 @@
                             "description": "Wireless Bluetooth On-Ear Headphones with Active Noise Cancellation, Transparency Mode and Microphone. Beoplay H8i  – a warm and honest acoustic performance, designed to overwhelm you with its precision, power and detail."
                         },
                         {
+                            "id": 4,
                             "name": "decorative alarm clock",
                             "price": 65,
                             "img_1": "tumbler_clock_01.jpg",
@@ -44,6 +49,7 @@
                     "name": "armchairs",
                     "products": [
                         {
+                            "id": 5,
                             "name": "molded plastic armchair",
                             "price": 560,
                             "img_1": "eames_armchair_01.jpg",
@@ -51,6 +57,7 @@
                             "description": "Eames Molded Plastic Armchair Dowel Base is a timeless armchair designed by Charles & Ray Eames for Herman Miller. Designed on the principle of adaptability. Its universally welcoming form can be expressed in a variety of materials and configurations to serve a variety of needs."
                         },
                         {
+                            "id": 6,
                             "name": "lounge chair",
                             "price": 499,
                             "img_1": "otio_chair_01.jpg",
@@ -59,6 +66,7 @@
                             "description": "Lean back and relax. The Otio lounge chair is built to take the edge off a long day at the office. An angled, solid-wood frame makes for a sturdy foundation for sumptuous cushions. This is a Demo Online Store. No orders shall be fulfilled."
                         },
                         {
+                            "id": 7,
                             "name": "fousce porta arm chair",
                             "price": 1333,
                             "img_1": "lilo_chair_01.jpg",
@@ -66,6 +74,7 @@
                             "description": "The Lilo family welcomes its new members, that preserve the references to the Scandinavian style, the modernist idea of the 50’s and the works of the masters of design."
                         },
                         {
+                            "id": 8,
                             "name": "mauris dining chair",
                             "price": 299,
                             "img_1": "love_dining_chair_01.jpg",
@@ -79,9 +88,11 @@
         {
             "name": "bathroom",
             "cover": "cat_bathroom.jpg",
+            "icon": "bathroom_icon.svg",
             "id": "bathroom",
             "products": [
                 {
+                    "id": 9,
                     "name": "ullam basin mixer",
                     "price": 160,
                     "img_1": "rim_mixer_01.jpg",
@@ -90,6 +101,7 @@
                     "description": "MARMO is a complete series made of 72 models, with different shapes and sizes for different functions, that keeps uncompromised its elegant beauty. This is a Demo Online Store."
                 },
                 {
+                    "id": 10,
                     "name": "gravida bathtub",
                     "price": 2100,
                     "img_1": "inbani_bathtub_01.jpg",
@@ -98,6 +110,7 @@
                     "description": "A young company with a wealth of experience. created in 2004, inbani has evolved into a leader in innovation thanks to a conviction to create products which truly benefit the well-being of the customer.  This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "id": 11,
                     "name": "vulputate mixer",
                     "price": 300,
                     "img_1": "marmo_mixer_01.jpg",
@@ -105,6 +118,7 @@
                     "description": "MARMO is a complete series made of 72 models, with different shapes and sizes for different functions, that keeps uncompromised its elegant beauty. This is a Demo Online Store."
                 },
                 {
+                    "id": 12,
                     "name": "aliquam veneatis bathtub",
                     "price": 2580,
                     "img_1": "sa_oche_01.jpg",
@@ -116,9 +130,11 @@
         {
             "name": "kitchen",
             "cover": "cat_kitchen.jpg",
+            "icon": "kitchen_icon.svg",
             "id": "kitchen",
             "products": [
                 {
+                    "id": 13,
                     "name": "quisque teapot",
                     "price": 240,
                     "img_1": "theo_teapot_01.jpg",
@@ -126,6 +142,7 @@
                     "description": "Theo Teapot is a Scandinavian-Japanese teapot made from stoneware and bamboo, designed by Unit 10 Design for Stelton.  This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "id": 14,
                     "name": "creamic teapot",
                     "price": 60,
                     "img_1": "cer_teapot_01.jpg",
@@ -134,6 +151,7 @@
                     "description": "Matte ceramic tea pot comes with integrated and removable metal tea infuser. Capacity 700 ml (2.96 cups). Dishwasher safe. This ceramic teapot has a white matte finish, coupled with a square shape and curved lines."
                 },
                 {
+                    "id": 15,
                     "name": "bottle grinders",
                     "price": 30,
                     "img_1": "bottle_gringer_01.jpg",
@@ -146,9 +164,11 @@
         {
             "name": "lighting",
             "cover": "cat_lighting.jpg",
+            "icon": "lighting_icon.svg",
             "id": "lighting",
             "products": [
                 {
+                    "id": 16,
                     "name": "commodo blown lamp",
                     "price": 275,
                     "img_1": "tradition_blown_01.jpg",
@@ -156,6 +176,7 @@
                     "description": "Blown lamp SW3 & SW4 by &tradition is a mouth-blown pendant lamp with a quilted pattern, it comes in a translucent variant with a silver lustre or in a opal white version. Blown lamp is fitted with a powder-coated metal suspension. This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "id": 17,
                     "name": "spot table",
                     "price": 100,
                     "img_1": "spot_lamp_01.jpg",

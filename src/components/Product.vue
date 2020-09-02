@@ -35,7 +35,9 @@
                 <button @click="openPreview(product)">
                     <i class="far fa-eye"></i>
                 </button>
-                <button class="base-button"><span>Add To cart</span></button>
+                <button class="base-button">
+                    <span>Add To cart</span>
+                </button>
             </div>
         </div>
         <div class="d-lg-none d-block">
@@ -76,6 +78,7 @@
 import StarRating from "vue-star-rating";
 import { EventBus } from "../main";
 export default {
+    name: "product-card",
     methods: {
         splitProductName(name) {
             return name.replace(" ", "<br />");

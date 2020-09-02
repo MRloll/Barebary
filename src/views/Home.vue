@@ -15,6 +15,7 @@ import RecentProducts from "@/components/RecentProducts.vue";
 import Info from "@/components/Info.vue";
 import ProductPreview from "@/components/ProductPreview.vue";
 export default {
+    name: "Home",
     components: {
         Slider,
         Showcase,

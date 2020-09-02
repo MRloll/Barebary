@@ -20,6 +20,15 @@ export default {
 </script>
 
 <style lang="scss">
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
 #app {
     position: relative;
     z-index: 1;

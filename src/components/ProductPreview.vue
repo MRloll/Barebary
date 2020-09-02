@@ -1,62 +1,64 @@
 <template>
-    <div
-        v-if="product"
-        class="preview d-flex justify-content-center align-items-center"
-    >
-        <div class="wrapper" @click.self="closePreview">
-            <div class="preview-box d-flex">
-                <i @click="closePreview" class="fa fa-times"></i>
+    <transition name="fade">
+        <div
+            v-if="product"
+            class="preview d-flex justify-content-center align-items-center"
+        >
+            <div class="wrapper" @click.self="closePreview">
+                <div class="preview-box d-flex">
+                    <i @click="closePreview" class="fa fa-times"></i>
 
-                <div class="product-slider">
-                    <flickity ref="flickity" :options="flickityOptions">
-                        <div
-                            class="carousel-cell d-flex justify-content-center align-items-center"
-                        >
-                            <img
-                                :src="
-                                    require(`../assets/images/${product.img_1}`)
-                                "
-                                alt="product.name"
-                            />
-                        </div>
-                        <div
-                            class="carousel-cell d-flex justify-content-center align-items-center"
-                        >
-                            <img
-                                :src="
-                                    require(`../assets/images/${product.img_2}`)
-                                "
-                                alt="product.name"
-                            />
-                        </div>
-                    </flickity>
-                </div>
-                <div class="product-details">
-                    <h1>{{ product.name }}</h1>
-                    <div class="rating">
-                        <star-rating
-                            :read-only="true"
-                            :rating="3"
-                            :star-size="15"
-                            :increment="0.1"
-                            :fixed-points="2"
-                            :show-rating="false"
-                        ></star-rating>
+                    <div class="product-slider">
+                        <flickity ref="flickity" :options="flickityOptions">
+                            <div
+                                class="carousel-cell d-flex justify-content-center align-items-center"
+                            >
+                                <img
+                                    :src="
+                                        require(`../assets/images/${product.img_1}`)
+                                    "
+                                    alt="product.name"
+                                />
+                            </div>
+                            <div
+                                class="carousel-cell d-flex justify-content-center align-items-center"
+                            >
+                                <img
+                                    :src="
+                                        require(`../assets/images/${product.img_2}`)
+                                    "
+                                    alt="product.name"
+                                />
+                            </div>
+                        </flickity>
                     </div>
-                    <span class="price"> ${{ product.price }} </span>
-                    <p class="description lead">
-                        {{ product.description }}
-                    </p>
-                    <div class="go-to-product">
-                        <router-link to="/">
-                            <i class="fas fa-arrow-right"></i> Go to Product
-                        </router-link>
+                    <div class="product-details">
+                        <h1>{{ product.name }}</h1>
+                        <div class="rating">
+                            <star-rating
+                                :read-only="true"
+                                :rating="3"
+                                :star-size="15"
+                                :increment="0.1"
+                                :fixed-points="2"
+                                :show-rating="false"
+                            ></star-rating>
+                        </div>
+                        <span class="price"> ${{ product.price }} </span>
+                        <p class="description lead">
+                            {{ product.description }}
+                        </p>
+                        <div class="go-to-product">
+                            <router-link to="/">
+                                <i class="fas fa-arrow-right"></i> Go to Product
+                            </router-link>
+                        </div>
+                        <button><span>ADD TO CART</span></button>
                     </div>
-                    <button><span>ADD TO CART</span></button>
                 </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -102,6 +104,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//   @@@@@@@@@@@@@@@@@@@@
+//  start Preview
+//  @@@@@@@@@@@@@@@@@@@@
 .preview {
     position: fixed;
     top: 0;
@@ -110,6 +115,9 @@ export default {
     height: 100%;
     z-index: 100;
     backdrop-filter: blur(10px);
+    //   @@@@@@@@@@@@@@@@@@@@
+    //  start wrapper
+    //  @@@@@@@@@@@@@@@@@@@@
     .wrapper {
         position: absolute;
         top: 0;
@@ -120,6 +128,9 @@ export default {
         justify-content: center;
         align-items: center;
         cursor: url(../assets/images/cross.png), zoom-out;
+        //   @@@@@@@@@@@@@@@@@@@@
+        //  start Preview box
+        //  @@@@@@@@@@@@@@@@@@@@\
         .preview-box {
             cursor: auto;
             width: 85%;
@@ -139,6 +150,9 @@ export default {
                 padding: 70px 15px;
                 max-height: 60vh;
             }
+            //   @@@@@@@@@@@@@@@@@@@@
+            //  start product slider
+            //  @@@@@@@@@@@@@@@@@@@@
             .product-slider {
                 & > div {
                     height: 100%;
@@ -149,6 +163,9 @@ export default {
                     overflow: hidden;
                 }
             }
+            //   @@@@@@@@@@@@@@@@@@@@
+            //  start product Details
+            //  @@@@@@@@@@@@@@@@@@@@
             .product-details {
                 overflow-y: auto;
                 overflow-x: hidden;
@@ -192,6 +209,9 @@ export default {
                     @include baseButton(black, white);
                 }
             }
+            //   @@@@@@@@@@@@@@@@@@@@
+            //  start Media quiries
+            //  @@@@@@@@@@@@@@@@@@@@\
             @media #{$maxSmall} {
                 width: 100%;
                 box-shadow: none;

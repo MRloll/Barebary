@@ -25,7 +25,7 @@
                             </li>
                             <li>
                                 <h3 class="link">
-                                    <router-link to="/">
+                                    <router-link to="/shop">
                                         the shop
                                         <i class="fas fa-chevron-down "></i>
                                     </router-link>
