@@ -53,7 +53,10 @@
                             <router-link
                                 :to="{
                                     name: 'product-page',
-                                    params: { name: product.name }
+                                    params: {
+                                        name: product.name,
+                                        product: product
+                                    }
                                 }"
                             >
                                 <i class="fas fa-arrow-right"></i> Go to Product

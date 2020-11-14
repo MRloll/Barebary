@@ -66,7 +66,8 @@
                                                                             'product-page',
                                                                         params: {
                                                                             name:
-                                                                                product.name
+                                                                                product.name,
+                                                                            product: product
                                                                         }
                                                                     }"
                                                                     >{{
@@ -86,7 +87,8 @@
                                                                     'product-page',
                                                                 params: {
                                                                     name:
-                                                                        product.name
+                                                                        product.name,
+                                                                    product: product
                                                                 }
                                                             }"
                                                             >{{

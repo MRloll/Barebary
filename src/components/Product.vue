@@ -3,7 +3,7 @@
         <router-link
             :to="{
                 name: 'product-page',
-                params: { name: product.name }
+                params: { name: product.name, product: product }
             }"
         >
             <div class="img">

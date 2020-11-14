@@ -172,7 +172,8 @@
                                                                     'product-page',
                                                                 params: {
                                                                     name:
-                                                                        product.name
+                                                                        product.name,
+                                                                    product: product
                                                                 }
                                                             }"
                                                             >{{
@@ -190,7 +191,8 @@
                                                     :to="{
                                                         name: 'product-page',
                                                         params: {
-                                                            name: product.name
+                                                            name: product.name,
+                                                            product: product
                                                         }
                                                     }"
                                                     >{{
