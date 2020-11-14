@@ -11,14 +11,7 @@
                     :key="product.id"
                     class="col-lg-3 col-md-4 col-6 "
                 >
-                    <router-link
-                        :to="{
-                            name: 'product-page',
-                            params: { id: product.id }
-                        }"
-                    >
-                        <product :product="product" />
-                    </router-link>
+                    <product :product="product" />
                 </div>
             </div>
         </div>

@@ -37,11 +37,12 @@
                         <div class="rating">
                             <star-rating
                                 :read-only="true"
-                                :rating="3"
+                                :rating="product.rating"
                                 :star-size="15"
                                 :increment="0.1"
                                 :fixed-points="2"
                                 :show-rating="false"
+                                v-if="product.rating"
                             ></star-rating>
                         </div>
                         <span class="price"> ${{ product.price }} </span>
@@ -49,7 +50,12 @@
                             {{ product.description }}
                         </p>
                         <div class="go-to-product">
-                            <router-link to="/">
+                            <router-link
+                                :to="{
+                                    name: 'product-page',
+                                    params: { name: product.name }
+                                }"
+                            >
                                 <i class="fas fa-arrow-right"></i> Go to Product
                             </router-link>
                         </div>
@@ -114,7 +120,7 @@ export default {
     width: 100%;
     height: 100%;
     z-index: 100;
-    backdrop-filter: blur(10px);
+    // backdrop-filter: blur(10px);
     //   @@@@@@@@@@@@@@@@@@@@
     //  start wrapper
     //  @@@@@@@@@@@@@@@@@@@@
@@ -161,6 +167,10 @@ export default {
                     width: 100%;
                     height: 100%;
                     overflow: hidden;
+                    transition: ease opacity 1s;
+                    &:not(.is-selected) {
+                        opacity: 0;
+                    }
                 }
             }
             //   @@@@@@@@@@@@@@@@@@@@

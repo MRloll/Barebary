@@ -15,10 +15,11 @@ const routes = [
     {
         path: "/shop",
         name: "shop",
-        component: Shop
+        component: Shop,
+        props: true
     },
     {
-        path: "/product-page/:id",
+        path: "/product/:name",
         name: "product-page",
         component: ProductPage
     }

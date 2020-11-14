@@ -61,7 +61,7 @@
                             <li>
                                 <div class="link">
                                     <h3>
-                                        <router-link to="goo" class="">
+                                        <router-link to="/" class="">
                                             home
                                         </router-link>
                                     </h3>
@@ -113,7 +113,7 @@
                                 @click="closeMenuSupLinks($event)"
                                 data-class=".shop-links"
                             ></i>
-                            <router-link to="/"><h4>shop</h4></router-link>
+                            <router-link to="/shop"><h4>shop</h4></router-link>
                             <i
                                 @click="closeMenu"
                                 class="fas fa-times fa-2x"
@@ -166,9 +166,19 @@
                                                         v-for="product in sort.products"
                                                         :key="product.id"
                                                     >
-                                                        <router-link to="/">{{
-                                                            product.name
-                                                        }}</router-link>
+                                                        <router-link
+                                                            :to="{
+                                                                name:
+                                                                    'product-page',
+                                                                params: {
+                                                                    name:
+                                                                        product.name
+                                                                }
+                                                            }"
+                                                            >{{
+                                                                product.name
+                                                            }}</router-link
+                                                        >
                                                     </li>
                                                 </template>
                                             </template>
@@ -176,9 +186,17 @@
                                                 v-for="product in category.products"
                                                 :key="product.id"
                                             >
-                                                <router-link to="/">{{
-                                                    product.name
-                                                }}</router-link>
+                                                <router-link
+                                                    :to="{
+                                                        name: 'product-page',
+                                                        params: {
+                                                            name: product.name
+                                                        }
+                                                    }"
+                                                    >{{
+                                                        product.name
+                                                    }}</router-link
+                                                >
                                             </li>
                                         </ul>
                                     </div>

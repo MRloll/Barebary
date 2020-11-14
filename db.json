@@ -8,8 +8,11 @@
             "sorts": [
                 {
                     "name": "accessories",
+                    "cat": "living room",
                     "products": [
                         {
+                            "cat": "living room",
+                            "sort": "accessories",
                             "id": 1,
                             "name": "portable bluetooth speaker",
                             "price": 249,
@@ -19,6 +22,8 @@
                             "description": "Portable Bluetooth speaker with up to 24hrs of battery life. Bring it everywhere. Even the heaviest beats are easy to carry."
                         },
                         {
+                            "cat": "living room",
+                            "sort": "accessories",
                             "id": 2,
                             "name": "elephant chair",
                             "price": 196,
@@ -27,14 +32,18 @@
                             "description": "The Eames’ originally envisioned their now iconic Elephant in plywood, back at its conception in 1945. However, due to technological restraints at the time it was never produced. The elephant was also originally environed as a child’s toy, and while still true today we can’t help but covet for ourselves. A playful design hero, in it’s true form. This is a Demo Online Store. No orders shall be fulfilled. Purchase this product on"
                         },
                         {
+                            "cat": "living room",
+                            "sort": "accessories",
                             "id": 3,
                             "name": "libero headphones",
-                            "price": 499,
+                            "price": 500,
                             "img_1": "beoplayh01.jpg",
                             "img_2": "beoplayh02.jpg",
                             "description": "Wireless Bluetooth On-Ear Headphones with Active Noise Cancellation, Transparency Mode and Microphone. Beoplay H8i  – a warm and honest acoustic performance, designed to overwhelm you with its precision, power and detail."
                         },
                         {
+                            "cat": "living room",
+                            "sort": "accessories",
                             "id": 4,
                             "name": "decorative alarm clock",
                             "price": 65,
@@ -47,8 +56,11 @@
                 },
                 {
                     "name": "armchairs",
+                    "cat": "living room",
                     "products": [
                         {
+                            "cat": "living room",
+                            "sort": "armchairs",
                             "id": 5,
                             "name": "molded plastic armchair",
                             "price": 560,
@@ -57,6 +69,8 @@
                             "description": "Eames Molded Plastic Armchair Dowel Base is a timeless armchair designed by Charles & Ray Eames for Herman Miller. Designed on the principle of adaptability. Its universally welcoming form can be expressed in a variety of materials and configurations to serve a variety of needs."
                         },
                         {
+                            "cat": "living room",
+                            "sort": "armchairs",
                             "id": 6,
                             "name": "lounge chair",
                             "price": 499,
@@ -66,6 +80,8 @@
                             "description": "Lean back and relax. The Otio lounge chair is built to take the edge off a long day at the office. An angled, solid-wood frame makes for a sturdy foundation for sumptuous cushions. This is a Demo Online Store. No orders shall be fulfilled."
                         },
                         {
+                            "cat": "living room",
+                            "sort": "armchairs",
                             "id": 7,
                             "name": "fousce porta arm chair",
                             "price": 1333,
@@ -74,6 +90,8 @@
                             "description": "The Lilo family welcomes its new members, that preserve the references to the Scandinavian style, the modernist idea of the 50’s and the works of the masters of design."
                         },
                         {
+                            "cat": "living room",
+                            "sort": "armchairs",
                             "id": 8,
                             "name": "mauris dining chair",
                             "price": 299,
@@ -92,6 +110,8 @@
             "id": "bathroom",
             "products": [
                 {
+                    "cat": "bathroom",
+                    "sort": "",
                     "id": 9,
                     "name": "ullam basin mixer",
                     "price": 160,
@@ -101,6 +121,8 @@
                     "description": "MARMO is a complete series made of 72 models, with different shapes and sizes for different functions, that keeps uncompromised its elegant beauty. This is a Demo Online Store."
                 },
                 {
+                    "cat": "bathroom",
+                    "sort": "",
                     "id": 10,
                     "name": "gravida bathtub",
                     "price": 2100,
@@ -110,6 +132,8 @@
                     "description": "A young company with a wealth of experience. created in 2004, inbani has evolved into a leader in innovation thanks to a conviction to create products which truly benefit the well-being of the customer.  This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "cat": "bathroom",
+                    "sort": "",
                     "id": 11,
                     "name": "vulputate mixer",
                     "price": 300,
@@ -118,6 +142,8 @@
                     "description": "MARMO is a complete series made of 72 models, with different shapes and sizes for different functions, that keeps uncompromised its elegant beauty. This is a Demo Online Store."
                 },
                 {
+                    "cat": "bathroom",
+                    "sort": "",
                     "id": 12,
                     "name": "aliquam veneatis bathtub",
                     "price": 2580,
@@ -134,6 +160,8 @@
             "id": "kitchen",
             "products": [
                 {
+                    "cat": "kitchen",
+                    "sort": "",
                     "id": 13,
                     "name": "quisque teapot",
                     "price": 240,
@@ -142,6 +170,8 @@
                     "description": "Theo Teapot is a Scandinavian-Japanese teapot made from stoneware and bamboo, designed by Unit 10 Design for Stelton.  This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "cat": "kitchen",
+                    "sort": "",
                     "id": 14,
                     "name": "creamic teapot",
                     "price": 60,
@@ -151,6 +181,8 @@
                     "description": "Matte ceramic tea pot comes with integrated and removable metal tea infuser. Capacity 700 ml (2.96 cups). Dishwasher safe. This ceramic teapot has a white matte finish, coupled with a square shape and curved lines."
                 },
                 {
+                    "cat": "kitchen",
+                    "sort": "",
                     "id": 15,
                     "name": "bottle grinders",
                     "price": 30,
@@ -168,6 +200,8 @@
             "id": "lighting",
             "products": [
                 {
+                    "cat": "lighting",
+                    "sort": "",
                     "id": 16,
                     "name": "commodo blown lamp",
                     "price": 275,
@@ -176,6 +210,8 @@
                     "description": "Blown lamp SW3 & SW4 by &tradition is a mouth-blown pendant lamp with a quilted pattern, it comes in a translucent variant with a silver lustre or in a opal white version. Blown lamp is fitted with a powder-coated metal suspension. This is a Demo Online Store. No orders shall be fulfilled."
                 },
                 {
+                    "cat": "lighting",
+                    "sort": "",
                     "id": 17,
                     "name": "spot table",
                     "price": 100,

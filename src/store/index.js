@@ -44,6 +44,26 @@ export default new Vuex.Store({
                 }
             }
             return recentProducts;
+        },
+        getAllProducts(state) {
+            var i = 0, allProducts = [];
+                
+                for (i; i < state.categories.length; i++) {
+                    if (state.categories[i].sorts) {
+                        for (let z = 0; z < state.categories[i].sorts.length; z++) {    
+                            for (let n = 0; n < state.categories[i].sorts[z].products.length; n++) {
+                                allProducts.push(state.categories[i].sorts[z].products[n])
+                            }
+                        }
+                    }
+
+                    if (!state.categories[i].sorts) {
+                        for (let z = 0; z < state.categories[i].products.length; z++) {
+                            allProducts.push(state.categories[i].products[z]);
+                        }
+                    }
+                }   
+                return allProducts; 
         }
     }
 });

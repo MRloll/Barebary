@@ -7,7 +7,12 @@
                     :key="category.id"
                     class="col-lg-3 col-6"
                 >
-                    <router-link to="/">
+                    <router-link
+                        :to="{
+                            name: 'shop',
+                            params: { categoryName: category.name }
+                        }"
+                    >
                         <div class="cat">
                             <div class="img">
                                 <img

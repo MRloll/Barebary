@@ -1,19 +1,24 @@
 <template>
     <div class="product">
-        <div class="img">
-            <img
-                class="img-fluid img-1"
-                :src="require(`@/assets/images/${product.img_1}`)"
-                alt="bottle"
-            />
-            <img
-                class="img-fluid img-2"
-                :src="require(`@/assets/images/${product.img_2}`)"
-                alt="bottle"
-            />
-        </div>
-        <div class="d-none d-lg-block">
-            <div class="desc">
+        <router-link
+            :to="{
+                name: 'product-page',
+                params: { name: product.name }
+            }"
+        >
+            <div class="img">
+                <img
+                    class="img-fluid img-1"
+                    :src="require(`@/assets/images/${product.img_1}`)"
+                    alt="bottle"
+                />
+                <img
+                    class="img-fluid img-2"
+                    :src="require(`@/assets/images/${product.img_2}`)"
+                    alt="bottle"
+                />
+            </div>
+            <div class="desc d-none d-lg-block">
                 <star-rating
                     :read-only="true"
                     :rating="product.rating"
@@ -29,16 +34,16 @@
                     <span>{{ product.price }}$</span>
                 </div>
             </div>
-            <div
-                class="buttons d-flex justify-content-center align-items-center"
-            >
-                <button @click="openPreview(product)">
-                    <i class="far fa-eye"></i>
-                </button>
-                <button class="base-button">
-                    <span>Add To cart</span>
-                </button>
-            </div>
+        </router-link>
+        <div
+            class="buttons d-none d-lg-flex justify-content-center align-items-center"
+        >
+            <button @click="openPreview(product)">
+                <i class="far fa-eye"></i>
+            </button>
+            <button class="base-button">
+                <span>Add To cart</span>
+            </button>
         </div>
         <div class="d-lg-none d-block">
             <div class="buttons buttons-small">

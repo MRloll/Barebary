@@ -41,7 +41,16 @@
                                                 <div>
                                                     <ul>
                                                         <li>
-                                                            <router-link to="/">
+                                                            <router-link
+                                                                :to="{
+                                                                    name:
+                                                                        'shop',
+                                                                    params: {
+                                                                        categoryName:
+                                                                            category.name
+                                                                    }
+                                                                }"
+                                                            >
                                                                 <h4>
                                                                     {{
                                                                         category.name
@@ -64,7 +73,14 @@
                                                                     "
                                                                 >
                                                                     <router-link
-                                                                        to="/"
+                                                                        :to="{
+                                                                            name:
+                                                                                'product-page',
+                                                                            params: {
+                                                                                name:
+                                                                                    product.name
+                                                                            }
+                                                                        }"
                                                                         >{{
                                                                             product.name
                                                                         }}</router-link
@@ -77,7 +93,14 @@
                                                             :key="product.id"
                                                         >
                                                             <router-link
-                                                                to="/"
+                                                                :to="{
+                                                                    name:
+                                                                        'product-page',
+                                                                    params: {
+                                                                        name:
+                                                                            product.name
+                                                                    }
+                                                                }"
                                                                 >{{
                                                                     product.name
                                                                 }}</router-link

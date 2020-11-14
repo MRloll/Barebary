@@ -12,7 +12,7 @@
                     chartreuse vinyl.
                 </p>
             </div>
-            <router-link to="/" class="base-button"
+            <router-link to="/shop" class="base-button"
                 ><span>view all new products</span></router-link
             >
         </div>
