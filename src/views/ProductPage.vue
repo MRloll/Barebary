@@ -110,6 +110,7 @@
                 </div>
             </div>
         </div>
+        <product-preview />
         <recent-products />
     </div>
 </template>
@@ -123,6 +124,7 @@ import ProductDescription from "@/components/ProductDescription.vue";
 import ProductReviews from "@/components/ProductReviews.vue";
 import ProductShipping from "@/components/ProductShipping.vue";
 import RecentProducts from "@/components/RecentProducts.vue";
+import ProductPreview from "@/components/ProductPreview.vue";
 
 import { mapGetters } from "vuex";
 export default {
@@ -132,7 +134,8 @@ export default {
         ProductDescription,
         ProductReviews,
         ProductShipping,
-        RecentProducts
+        RecentProducts,
+        ProductPreview
     },
     data() {
         return {

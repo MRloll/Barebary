@@ -61,7 +61,9 @@
                                 <i class="fas fa-arrow-right"></i> Go to Product
                             </router-link>
                         </div>
-                        <button><span>ADD TO CART</span></button>
+                        <button @click="addToCart(product)">
+                            <span>ADD TO CART</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -93,6 +95,9 @@ export default {
     methods: {
         closePreview() {
             this.product = null;
+        },
+        addToCart(product) {
+            this.$store.dispatch("addToCart", product);
         }
     },
     created() {
