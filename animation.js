@@ -48,7 +48,7 @@ const animate = {
     openCart() {
         this.tl.to(".mini-cart", { maxWidth: 670 });
         gsap.to(".overlay-cart", { opacity: 0.6, display: "block" });
-        gsap.to("html", { overflow: "hidden" });
+        gsap.to("body", { overflow: "hidden" });
         this.tl.fromTo(
             ".cart-text",
             {
@@ -70,7 +70,7 @@ const animate = {
             duration: 0.2
         });
         gsap.to(".overlay-cart", { opacity: 0, display: "none" });
-        gsap.to("html", { overflow: "auto" });
+        gsap.to("body", { overflow: "auto" });
         this.tl.to(".mini-cart", {
             maxWidth: 0
         });
