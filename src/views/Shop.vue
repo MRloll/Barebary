@@ -491,6 +491,16 @@
                             <product :product="product" />
                         </div>
                     </div>
+                    <!-- ****************************************** -->
+                    <!-- if the  htere is no products   -->
+                    <!-- ****************************************** -->
+                    <div
+                        class="h-100 d-flex justify-content-center align-items-center"
+                    >
+                        <h6 class="h1" v-if="priceFilterdProducts.length == 0">
+                            no products
+                        </h6>
+                    </div>
                 </div>
             </div>
         </div>
@@ -501,6 +511,8 @@
 import { mapState, mapGetters } from "vuex";
 import Product from "@/components/Product.vue";
 import ProductPreview from "@/components/ProductPreview.vue";
+import { EventBus } from "../main";
+
 export default {
     data() {
         return {
@@ -600,15 +612,14 @@ export default {
         }
     },
     created() {
-        if (this.categoryName) {
-            this.catName = this.categoryName;
-        }
+        EventBus.$on("addCatName", catName => {
+            this.catName = catName;
+        });
     },
     components: {
         Product,
         ProductPreview
-    },
-    props: ["categoryName"]
+    }
 };
 </script>
 

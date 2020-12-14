@@ -46,7 +46,7 @@ const animate = {
         navMobile.classList.replace("d-block", "d-lg-none");
     },
     openCart() {
-        this.tl.to(".mini-cart", { maxWidth: 670, padding: 70 });
+        this.tl.to(".mini-cart", { maxWidth: 670 });
         gsap.to(".overlay-cart", { opacity: 0.6, display: "block" });
         gsap.to("html", { overflow: "hidden" });
         this.tl.fromTo(
@@ -72,8 +72,7 @@ const animate = {
         gsap.to(".overlay-cart", { opacity: 0, display: "none" });
         gsap.to("html", { overflow: "auto" });
         this.tl.to(".mini-cart", {
-            maxWidth: 0,
-            padding: 0
+            maxWidth: 0
         });
     },
     openMenuSupLinks(elem) {

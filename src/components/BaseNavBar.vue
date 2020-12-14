@@ -43,15 +43,16 @@
                                                         <li>
                                                             <router-link
                                                                 :to="{
-                                                                    name:
-                                                                        'shop',
-                                                                    params: {
-                                                                        categoryName:
-                                                                            category.name
-                                                                    }
+                                                                    name: 'shop'
                                                                 }"
                                                             >
-                                                                <h4>
+                                                                <h4
+                                                                    @click="
+                                                                        addCatName(
+                                                                            category.name
+                                                                        )
+                                                                    "
+                                                                >
                                                                     {{
                                                                         category.name
                                                                     }}
@@ -77,9 +78,8 @@
                                                                             name:
                                                                                 'product-page',
                                                                             params: {
-                                                                                name:
-                                                                                    product.name,
-                                                                                product: product
+                                                                                id:
+                                                                                    product.id
                                                                             }
                                                                         }"
                                                                         >{{
@@ -98,9 +98,8 @@
                                                                     name:
                                                                         'product-page',
                                                                     params: {
-                                                                        name:
-                                                                            product.name,
-                                                                        product: product
+                                                                        id:
+                                                                            product.id
                                                                     }
                                                                 }"
                                                                 >{{
@@ -168,7 +167,9 @@
                             <h3>
                                 <router-link to="">
                                     cart
-                                    <span class="cart-count">0</span>
+                                    <span class="cart-count">{{
+                                        cart.length
+                                    }}</span>
                                 </router-link>
                             </h3>
                         </div>
@@ -185,6 +186,7 @@
 import animate from "../../animation.js";
 import NavMobile from "@/components/NavMobile.vue";
 import StickyNav from "@/components/StickyNav.vue";
+import { EventBus } from "../main";
 import { mapState } from "vuex";
 export default {
     name: "BaseNavBar",
@@ -203,11 +205,13 @@ export default {
             } else {
                 fixedNav.classList.replace("stick", "unstick");
             }
+        },
+        addCatName(catName) {
+            EventBus.$emit("addCatName", catName);
         }
     },
     updated() {
         document.addEventListener("scroll", this.showFixedNav);
-
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //loop for animation links in the menu
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -226,7 +230,7 @@ export default {
         document.addEventListener("scroll", this.showFixedNav);
     },
     computed: {
-        ...mapState(["categories"])
+        ...mapState(["categories", "cart"])
     },
     components: {
         NavMobile,

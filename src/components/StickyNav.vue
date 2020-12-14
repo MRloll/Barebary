@@ -34,14 +34,16 @@
                                                     <li>
                                                         <router-link
                                                             :to="{
-                                                                name: 'shop',
-                                                                params: {
-                                                                    categoryName:
-                                                                        category.name
-                                                                }
+                                                                name: 'shop'
                                                             }"
                                                         >
-                                                            <h4>
+                                                            <h4
+                                                                @click="
+                                                                    addCatName(
+                                                                        category.name
+                                                                    )
+                                                                "
+                                                            >
                                                                 {{
                                                                     category.name
                                                                 }}
@@ -65,9 +67,8 @@
                                                                         name:
                                                                             'product-page',
                                                                         params: {
-                                                                            name:
-                                                                                product.name,
-                                                                            product: product
+                                                                            id:
+                                                                                product.id
                                                                         }
                                                                     }"
                                                                     >{{
@@ -86,9 +87,8 @@
                                                                 name:
                                                                     'product-page',
                                                                 params: {
-                                                                    name:
-                                                                        product.name,
-                                                                    product: product
+                                                                    id:
+                                                                        product.id
                                                                 }
                                                             }"
                                                             >{{
@@ -156,7 +156,9 @@
                         <h3>
                             <router-link to="">
                                 cart
-                                <span class="cart-count">0</span>
+                                <span class="cart-count">{{
+                                    cart.length
+                                }}</span>
                             </router-link>
                         </h3>
                     </div>
@@ -166,6 +168,7 @@
     </div>
 </template>
 <script>
+import { EventBus } from "../main";
 import animate from "../../animation.js";
 import { mapState } from "vuex";
 
@@ -174,10 +177,13 @@ export default {
     methods: {
         openCart() {
             animate.openCart();
+        },
+        addCatName(catName) {
+            EventBus.$emit("addCatName", catName);
         }
     },
     computed: {
-        ...mapState(["categories"])
+        ...mapState(["categories", "cart"])
     }
 };
 </script>

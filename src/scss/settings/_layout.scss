@@ -48,7 +48,7 @@ a {
     Button
 **************/
 
-* {
+*:not(input) {
     text-transform: capitalize;
 }
 

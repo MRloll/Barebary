@@ -3,7 +3,9 @@
         <router-link
             :to="{
                 name: 'product-page',
-                params: { name: product.name, product: product }
+                params: {
+                    id: product.id
+                }
             }"
         >
             <div class="img">
@@ -41,7 +43,7 @@
             <button @click="openPreview(product)">
                 <i class="far fa-eye"></i>
             </button>
-            <button class="base-button">
+            <button class="base-button" @click="addToCart(product)">
                 <span>Add To cart</span>
             </button>
         </div>
@@ -50,7 +52,7 @@
                 <button @click="openPreview(product)">
                     <i class="far fa-eye"></i>
                 </button>
-                <button class="base-button">
+                <button class="base-button" @click="addToCart(product)">
                     <span><i class="fas fa-cart-plus"></i></span>
                 </button>
             </div>
@@ -90,6 +92,9 @@ export default {
         },
         openPreview(product) {
             EventBus.$emit("openPreview", product);
+        },
+        addToCart(item) {
+            this.$store.dispatch("addToCart", item);
         }
     },
     props: ["product"],

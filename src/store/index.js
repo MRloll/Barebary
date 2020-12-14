@@ -7,11 +7,24 @@ import CatsService from "@/services/CatsService.js";
 
 export default new Vuex.Store({
     state: {
-        categories: []
+        categories: [],
+        cart: []
     },
     mutations: {
         GET_CATS(state, categories) {
             state.categories = categories;
+        },
+        ADD_TO_CART(state, newItem) {
+            const index = state.cart.findIndex(item => item.id === newItem.id);
+            if (index === -1) {
+                state.cart.push(newItem);            
+            } else {
+                state.cart[index] = newItem;
+            }
+        },
+        REMOVE_FROM_CART(state, itemId) {
+            const index = state.cart.findIndex(item => item.id === itemId);
+            state.cart.splice(index, 1);
         }
     },
     actions: {
@@ -19,6 +32,12 @@ export default new Vuex.Store({
             CatsService.getCats().then(response => {
                 commit("GET_CATS", response.data);
             });
+        },
+        addToCart({ commit }, payload) {
+            commit("ADD_TO_CART", payload);
+        },
+        removeFromCart({ commit }, payload) {
+            commit("REMOVE_FROM_CART", payload);
         }
     },
     getters: {
@@ -46,9 +65,9 @@ export default new Vuex.Store({
             return recentProducts;
         },
         getAllProducts(state) {
-            var i = 0, allProducts = [];
-                
-                for (i; i < state.categories.length; i++) {
+            var i = 0, 
+                allProducts = [];
+                for ( i; i < state.categories.length; i++ ) {
                     if (state.categories[i].sorts) {
                         for (let z = 0; z < state.categories[i].sorts.length; z++) {    
                             for (let n = 0; n < state.categories[i].sorts[z].products.length; n++) {
@@ -63,7 +82,7 @@ export default new Vuex.Store({
                         }
                     }
                 }   
-                return allProducts; 
+            return allProducts; 
         }
     }
 });

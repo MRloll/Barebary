@@ -9,7 +9,7 @@ module.exports = {
             // writeToDist: true,
             stats: "errors-only",
             // quiet: true,
-            host: "localhost"
+            // host: "localhost"
         }
         // plugins: [
         //     new CleanWebpackPlugin()

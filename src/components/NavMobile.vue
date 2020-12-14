@@ -40,7 +40,9 @@
                             <h3>
                                 <router-link to="">
                                     <span class="d-none d-md-inline">cart</span>
-                                    <span class="cart-count">0</span>
+                                    <span class="cart-count">{{
+                                        cart.length
+                                    }}</span>
                                 </router-link>
                             </h3>
                         </div>
@@ -146,8 +148,14 @@
                                                 "
                                                 :data-class="'.' + category.id"
                                             ></i>
-                                            <router-link to="/"
-                                                ><h4>
+                                            <router-link :to="{ name: 'shop' }"
+                                                ><h4
+                                                    @click="
+                                                        addCatName(
+                                                            category.name
+                                                        )
+                                                    "
+                                                >
                                                     {{ category.name }}
                                                 </h4></router-link
                                             >
@@ -171,9 +179,8 @@
                                                                 name:
                                                                     'product-page',
                                                                 params: {
-                                                                    name:
-                                                                        product.name,
-                                                                    product: product
+                                                                    id:
+                                                                        product.id
                                                                 }
                                                             }"
                                                             >{{
@@ -191,8 +198,7 @@
                                                     :to="{
                                                         name: 'product-page',
                                                         params: {
-                                                            name: product.name,
-                                                            product: product
+                                                            id: product.id
                                                         }
                                                     }"
                                                     >{{
@@ -267,6 +273,7 @@
 
 <script>
 import animate from "../../animation.js";
+import { EventBus } from "../main";
 import { mapState } from "vuex";
 export default {
     name: "NavMobile",
@@ -295,10 +302,13 @@ export default {
         closeCategoryLinks(e) {
             let elem = e.currentTarget.getAttribute("data-class");
             animate.closeCategoryLinks(elem);
+        },
+        addCatName(catName) {
+            EventBus.$emit("addCatName", catName);
         }
     },
     computed: {
-        ...mapState(["categories"])
+        ...mapState(["categories", "cart"])
     }
 };
 </script>

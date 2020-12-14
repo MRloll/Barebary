@@ -19,7 +19,7 @@ const routes = [
         props: true
     },
     {
-        path: "/product/:name",
+        path: "/product/:id",
         name: "product-page",
         component: ProductPage,
         props: true
@@ -29,7 +29,11 @@ const routes = [
 const router = new VueRouter({
     mode: "history",
     base: process.env.BASE_URL,
-    routes
+    routes,
+    scrollBehavior() {
+        return { x: 0, y: 0 };
+    },
+    
 });
 
 export default router;

@@ -54,8 +54,7 @@
                                 :to="{
                                     name: 'product-page',
                                     params: {
-                                        name: product.name,
-                                        product: product
+                                        id: product.id
                                     }
                                 }"
                             >

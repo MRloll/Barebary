@@ -6,11 +6,11 @@
                     v-for="category in categories"
                     :key="category.id"
                     class="col-lg-3 col-6"
+                    @click="addCatName(category.name)"
                 >
                     <router-link
                         :to="{
-                            name: 'shop',
-                            params: { categoryName: category.name }
+                            name: 'shop'
                         }"
                     >
                         <div class="cat">
@@ -48,7 +48,14 @@
 
 <script>
 import { mapState } from "vuex";
+import { EventBus } from "../main";
+
 export default {
+    methods: {
+        addCatName(catName) {
+            EventBus.$emit("addCatName", catName);
+        }
+    },
     computed: {
         ...mapState(["categories"])
     }
