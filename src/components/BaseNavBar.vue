@@ -210,7 +210,7 @@ export default {
             EventBus.$emit("addCatName", catName);
         }
     },
-    updated() {
+    mounted() {
         document.addEventListener("scroll", this.showFixedNav);
         //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         //loop for animation links in the menu

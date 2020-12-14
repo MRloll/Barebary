@@ -160,7 +160,7 @@
                         </transition>
 
                         <input
-                            @click="addReview($event)"
+                            @click="addReview()"
                             type="button"
                             value="Submit"
                         />
@@ -226,10 +226,9 @@ export default {
         setRating(rating) {
             this.ratingSelected = rating;
         },
-        addReview(e) {
-            if (!this.title && !this.name && !this.emial && !this.text) {
+        addReview() {
+            if (!this.title || !this.name || !this.email || !this.text) {
                 this.$v.$touch();
-                e.preventDefault();
             } else {
                 this.reviews.push({
                     title: this.title,

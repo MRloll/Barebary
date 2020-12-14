@@ -496,8 +496,9 @@
                     <!-- ****************************************** -->
                     <div
                         class="h-100 d-flex justify-content-center align-items-center"
+                        v-if="priceFilterdProducts.length == 0"
                     >
-                        <h6 class="h1" v-if="priceFilterdProducts.length == 0">
+                        <h6 class="h1">
                             no products
                         </h6>
                     </div>

@@ -106,7 +106,7 @@ export default {
     height: 100vh;
     padding: 0;
     background: white;
-    z-index: 10;
+    z-index: 100;
     .times {
         padding: 50px 0px 50px;
     }

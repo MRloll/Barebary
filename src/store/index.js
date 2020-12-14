@@ -4,6 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 import CatsService from "@/services/CatsService.js";
+import  CategoriesObject  from "../../db.js";
 
 export default new Vuex.Store({
     state: {
@@ -29,9 +30,22 @@ export default new Vuex.Store({
     },
     actions: {
         getCategories({ commit }) {
+            // **************IF you run json-server ******************//
+            // When I use free host i need a server and I dont have to put so much effort on this
+            // so I use CategoriesObject file to get the categories from
+            // and if I or anybody uses json-server localy it will run proberly
+            let jsonResponse = null;
             CatsService.getCats().then(response => {
-                commit("GET_CATS", response.data);
+                if (response.status == 200) {
+                    jsonResponse = response.data;
+                }
             });
+
+            if (jsonResponse) {
+                commit("GET_CATS", jsonResponse);
+            } else {
+                commit("GET_CATS", CategoriesObject)
+            }
         },
         addToCart({ commit }, payload) {
             commit("ADD_TO_CART", payload);
