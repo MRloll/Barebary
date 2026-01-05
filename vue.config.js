@@ -2,12 +2,13 @@
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 // var path = require("path");
 module.exports = {
+    publicPath: process.env.NODE_ENV === "production" ? "/barebary/" : "/",
     configureWebpack: {
         devServer: {
             port: 9000,
             open: true,
             // writeToDist: true,
-            stats: "errors-only",
+            stats: "errors-only"
             // quiet: true,
             // host: "localhost"
         }
